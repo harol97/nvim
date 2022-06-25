@@ -1,7 +1,7 @@
 call plug#begin("~/.vim/plugged")
 
 Plug 'https://github.com/tmhedberg/SimpylFold'
-"Plug 'briones-gabriel/darcula-solid.nvim'
+Plug 'briones-gabriel/darcula-solid.nvim'
 Plug 'rktjmp/lush.nvim'
 Plug 'preservim/nerdtree'
 Plug 'Townk/vim-autoclose'
