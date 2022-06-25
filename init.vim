@@ -9,11 +9,11 @@ Plug 'jistr/vim-nerdtree-tabs'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'alvan/vim-closetag'
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'junegunn/fzf.vim'
 Plug 'jiangmiao/auto-pairs'
 "Plug 'mg979/vim-visual-multi', {'branch': 'master'}
-Plug 'ellisonleao/gruvbox.nvim'
+
 call plug#end()
 
 syntax on
@@ -29,6 +29,7 @@ set mouse=a
 set clipboard=unnamed
 set showcmd
 set encoding=utf-8
+set nowrap
 
 set tabstop=4
 set shiftwidth=4
@@ -41,8 +42,7 @@ nnoremap <C-w> :q<CR>
 nnoremap <C-x> :qa<CR>
 
 " themes
-"colorscheme darcula-solid
-colorscheme gruvbox
+colorscheme darcula-solid
 set background=dark
 set termguicolors
 
