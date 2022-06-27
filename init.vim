@@ -1,7 +1,5 @@
-call plug#begin("~/.vim/plugged")
+call plug#begin("~/.local/share/nvim/plugged")
 
-Plug 'https://github.com/tmhedberg/SimpylFold'
-Plug 'briones-gabriel/darcula-solid.nvim'
 Plug 'rktjmp/lush.nvim'
 Plug 'preservim/nerdtree'
 Plug 'Townk/vim-autoclose'
@@ -9,14 +7,22 @@ Plug 'jistr/vim-nerdtree-tabs'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'alvan/vim-closetag'
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neoclide/coc.nvim',{'branch': 'release'}
 Plug 'junegunn/fzf.vim'
 Plug 'jiangmiao/auto-pairs'
-"Plug 'mg979/vim-visual-multi', {'branch': 'master'}
+Plug 'briones-gabriel/darcula-solid.nvim'
+Plug 'rktjmp/lush.nvim'
+Plug 'https://github.com/tmhedberg/SimpylFold'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 call plug#end()
 
 syntax on
+
+
+" airline
+let g:airline_theme='distinguished'
 
 " docstring
 nmap <silent> ga <Plug>(coc-codeaction-line)
@@ -26,26 +32,29 @@ nmap <silent> gA <Plug>(coc-codeaction)
 " config nvim
 set number
 set mouse=a
-set clipboard=unnamed
+set clipboard=unnamedplus
 set showcmd
 set encoding=utf-8
-set nowrap
 
+set nospell
+set nowrap
 set tabstop=4
 set shiftwidth=4
-"set expandtab
-set autoindent
 set smartindent
+set expandtab
 nnoremap <C-s> :w<CR>
-nnoremap <C-z> :u<CR>
-nnoremap <C-w> :q<CR>
-nnoremap <C-x> :qa<CR>
+nnoremap <C-e> :u<CR>
+nnoremap <C-w> :wq<CR>
+nnoremap <C-x> :wqa<CR>
+
+" symplifold
+set foldmethod=indent
 
 " themes
-colorscheme darcula-solid
 set background=dark
+colorscheme darcula-solid
+"colorscheme gruvbox
 set termguicolors
-
 
 " panel bar
 let NERDTreeQuitOnOpen=1
