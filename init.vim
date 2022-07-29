@@ -32,6 +32,7 @@ nmap <silent> gA <Plug>(coc-codeaction)
 " config nvim
 set number
 set mouse=a
+" install xclip if it is not work
 set clipboard=unnamedplus
 set showcmd
 set encoding=utf-8
