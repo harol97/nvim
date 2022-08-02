@@ -1,12 +1,3 @@
-call plug#begin("~/.local/share/nvim/plugged")
-
-Plug 'rktjmp/lush.nvim'
-Plug 'preservim/nerdtree'
-Plug 'Townk/vim-autoclose'
-Plug 'jistr/vim-nerdtree-tabs'
-Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'alvan/vim-closetag'
-Plug 'christoomey/vim-tmux-navigator'
 Plug 'neoclide/coc.nvim',{'branch': 'release'}
 Plug 'junegunn/fzf.vim'
 Plug 'jiangmiao/auto-pairs'
@@ -24,11 +15,7 @@ Plug 'https://github.com/Konfekt/FastFold'
 call plug#end()
 
 syntax on
-
-" prettier
-
-vmap <C-f>f  <Plug>(coc-format-selected)
-nmap <C-f>f  <Plug>(coc-format-selected)
+filetype plugin on
 
 "airline
 let g:airline_theme='distinguished'
@@ -49,7 +36,9 @@ set encoding=utf-8
 set nospell
 set nowrap
 set tabstop=4
-set noexpandtab
+set shiftwidth=4
+set expandtab
+
 imap <C-s> <C-O>:w<CR>
 nmap <C-s> :w<CR>
 imap <C-e> <C-O>:u<CR>
