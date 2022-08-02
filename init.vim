@@ -59,6 +59,10 @@ nmap <C-w> :wq<CR>
 imap <C-x> <C-O>:wqa<CR>
 nmap <C-x> :wqa<CR>
 imap <C-r> <C-O>:redo<CR>
+imap <C-f> <C-O>:sp<CR>
+nmap <C-f> :sp<CR>
+imap <C-g> <C-O>:vsp<CR>
+nmap <C-g> :vsp<CR>
 
 " fastfold
 let g:markdown_folding = 1
