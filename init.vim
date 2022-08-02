@@ -10,19 +10,29 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'neoclide/coc.nvim',{'branch': 'release'}
 Plug 'junegunn/fzf.vim'
 Plug 'jiangmiao/auto-pairs'
+Plug 'averms/black-nvim', {'do': ':UpdateRemotePlugins'}
 Plug 'briones-gabriel/darcula-solid.nvim'
+"Plug 'mg979/vim-visual-multi', {'branch': 'master'}
+Plug 'https://github.com/terryma/vim-multiple-cursors'
 Plug 'rktjmp/lush.nvim'
-Plug 'https://github.com/tmhedberg/SimpylFold'
+" Plug 'https://github.com/tmhedberg/SimpylFold'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'https://github.com/Konfekt/FastFold'
+"Plug 'davidhalter/jedi-vim'
 
 call plug#end()
 
 syntax on
 
+" prettier
 
-" airline
+vmap <C-f>f  <Plug>(coc-format-selected)
+nmap <C-f>f  <Plug>(coc-format-selected)
+
+"airline
 let g:airline_theme='distinguished'
+"let g:airline_theme='gruvbox_material'
 
 " docstring
 nmap <silent> ga <Plug>(coc-codeaction-line)
@@ -31,8 +41,7 @@ nmap <silent> gA <Plug>(coc-codeaction)
 
 " config nvim
 set number
-set mouse=a
-" install xclip if it is not work
+se mouse=a
 set clipboard=unnamedplus
 set showcmd
 set encoding=utf-8
@@ -40,41 +49,77 @@ set encoding=utf-8
 set nospell
 set nowrap
 set tabstop=4
-set shiftwidth=4
-set smartindent
-set expandtab
-nnoremap <C-s> :w<CR>
-nnoremap <C-e> :u<CR>
-nnoremap <C-w> :wq<CR>
-nnoremap <C-x> :wqa<CR>
+set noexpandtab
+imap <C-s> <C-O>:w<CR>
+nmap <C-s> :w<CR>
+imap <C-e> <C-O>:u<CR>
+nmap <C-e> :u<CR>
+imap <C-w> <C-O>:wq<CR>
+nmap <C-w> :wq<CR>
+imap <C-x> <C-O>:wqa<CR>
+nmap <C-x> :wqa<CR>
+imap <C-r> <C-O>:redo<CR>
+
+" fastfold
+let g:markdown_folding = 1
+let g:rst_fold_enabled = 1
+let g:tex_fold_enabled = 1
+let g:vimsyn_folding = 'af'
+let g:xml_syntax_folding = 1
+let g:javaScript_fold = 1
+let g:sh_fold_enabled= 7
+let g:zsh_fold_enable = 1
+let g:ruby_fold = 1
+let g:perl_fold = 1
+let g:perl_fold_blocks = 1
+let g:r_syntax_folding = 1
+let g:rust_fold = 1
+let g:php_folding = 1
+let g:fortran_fold=1
+let g:clojure_fold = 1
+let g:baan_fold=1
+autocmd FileType python setlocal foldmethod=indent
+nmap <C-k> :foldopen<CR>
+nmap <C-l> :foldclose<CR>
+imap <C-l> <C-O>:foldclose<CR>
+imap <C-k> <C-O>:foldopen<CR>
+
 
 " symplifold
-set foldmethod=indent
+" set foldmethod=indent
 
 " themes
-set background=dark
 colorscheme darcula-solid
-"colorscheme gruvbox
 set termguicolors
+set background=dark
+" let g:gruvbox_material_background='hard'
+" colorscheme gruvbox-material
+
 
 " panel bar
+set mouse=a
 let NERDTreeQuitOnOpen=1
 let NERDTreeShowHidden=1
-nnoremap <C-b> :NERDTreeToggle<CR>
+imap <C-b> <C-O>:NERDTreeToggle<CR>
+nmap <C-b> :NERDTreeToggle<CR>
 
 " tmux-navigator
 let g:tmux_navigator_no_mappings = 1
-nnoremap <c-left> :TmuxNavigateLeft<cr>
-nnoremap <c-down> :TmuxNavigateDown<cr>
-nnoremap <c-up>  :TmuxNavigateUp<cr>
-nnoremap <c-right>  :TmuxNavigateRight<cr>
+imap <c-left> <C-O>:TmuxNavigateLeft<cr>
+nmap <c-left> :TmuxNavigateLeft<cr>
+imap <c-down> <C-O>:TmuxNavigateDown<cr>
+nmap <c-down> :TmuxNavigateDown<cr>
+imap <c-up>  <C-O>:TmuxNavigateUp<cr>
+nmap <c-up> :TmuxNavigateUp<cr>
+imap <c-right>  <C-O>:TmuxNavigateRight<cr>
+nmap <c-right> :TmuxNavigateRight<cr>
 " nnoremap <silent> {Previous-Mapping} :TmuxNavigatePrevious<cr>
 
 " closetag
-let g:closetag_filenames = '*.html,*.xhtml,*.phtml, *.js'
-let g:closetag_xhtml_filenames = '*.xhtml,*.jsx'
-let g:closetag_filetypes = 'html,xhtml,phtml'
-let g:closetag_xhtml_filetypes = 'xhtml,jsx'
+let g:closetag_filenames = '*.html,*.xhtml,*.phtml, *.js, *.xml'
+let g:closetag_xhtml_filenames = '*.xhtml,*.jsx,*.xml'
+let g:closetag_filetypes = 'html,xhtml,phtml,xml'
+let g:closetag_xhtml_filetypes = 'xhtml,jsx,xml'
 let g:closetag_emptyTags_caseSensitive = 1
 let g:closetag_regions = {
     \ 'typescript.tsx': 'jsxRegion,tsxRegion',
