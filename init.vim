@@ -1,3 +1,12 @@
+call plug#begin("~/.local/share/nvim/plugged")
+
+Plug 'rktjmp/lush.nvim'
+Plug 'preservim/nerdtree'
+Plug 'Townk/vim-autoclose'
+"Plug 'jistr/vim-nerdtree-tabs'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'alvan/vim-closetag'
+Plug 'christoomey/vim-tmux-navigator'
 Plug 'neoclide/coc.nvim',{'branch': 'release'}
 Plug 'junegunn/fzf.vim'
 Plug 'jiangmiao/auto-pairs'
@@ -10,12 +19,19 @@ Plug 'rktjmp/lush.nvim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'https://github.com/Konfekt/FastFold'
+Plug 'ryanoasis/vim-devicons'
 "Plug 'davidhalter/jedi-vim'
 
 call plug#end()
 
 syntax on
-filetype plugin on
+
+
+" autocomplete
+inoremap <silent><expr> <c-space> coc#refresh()
+
+" coc configuration
+nmap <silent> gd <Plug>(coc-definition)
 
 "airline
 let g:airline_theme='distinguished'
@@ -31,7 +47,7 @@ set number
 se mouse=a
 set clipboard=unnamedplus
 set showcmd
-set encoding=utf-8
+set encoding=UTF-8
 
 set nospell
 set nowrap
@@ -52,6 +68,10 @@ imap <C-f> <C-O>:sp<CR>
 nmap <C-f> :sp<CR>
 imap <C-g> <C-O>:vsp<CR>
 nmap <C-g> :vsp<CR>
+imap <Tab> <C-t>
+imap <S-Tab> <C-d>
+nmap <Tab> >>
+nmap <S-Tab> <<
 
 " fastfold
 let g:markdown_folding = 1
@@ -76,7 +96,7 @@ nmap <C-k> :foldopen<CR>
 nmap <C-l> :foldclose<CR>
 imap <C-l> <C-O>:foldclose<CR>
 imap <C-k> <C-O>:foldopen<CR>
-
+imap <Home> <C-O>^
 
 " symplifold
 " set foldmethod=indent
@@ -90,7 +110,6 @@ set background=dark
 
 
 " panel bar
-set mouse=a
 let NERDTreeQuitOnOpen=1
 let NERDTreeShowHidden=1
 imap <C-b> <C-O>:NERDTreeToggle<CR>
