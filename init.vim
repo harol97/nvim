@@ -1,26 +1,16 @@
 call plug#begin("~/.local/share/nvim/plugged")
 
 Plug 'rktjmp/lush.nvim'
-Plug 'preservim/nerdtree'
 Plug 'Townk/vim-autoclose'
-"Plug 'jistr/vim-nerdtree-tabs'
-Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'alvan/vim-closetag'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'neoclide/coc.nvim',{'branch': 'release'}
-Plug 'junegunn/fzf.vim'
 Plug 'jiangmiao/auto-pairs'
-Plug 'averms/black-nvim', {'do': ':UpdateRemotePlugins'}
 Plug 'briones-gabriel/darcula-solid.nvim'
-"Plug 'mg979/vim-visual-multi', {'branch': 'master'}
-Plug 'https://github.com/terryma/vim-multiple-cursors'
 Plug 'rktjmp/lush.nvim'
-" Plug 'https://github.com/tmhedberg/SimpylFold'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'https://github.com/Konfekt/FastFold'
-Plug 'ryanoasis/vim-devicons'
-"Plug 'davidhalter/jedi-vim'
 
 call plug#end()
 
@@ -31,11 +21,15 @@ syntax on
 inoremap <silent><expr> <c-space> coc#refresh()
 
 " coc configuration
+" go to definition
 nmap <silent> gd <Plug>(coc-definition)
+
+" install coc-explorer
+nmap <c-b> <Cmd>CocCommand explorer<CR>
+imap <c-b> <C-O>:CocCommand explorer<CR><C-O>
 
 "airline
 let g:airline_theme='distinguished'
-"let g:airline_theme='gruvbox_material'
 
 " docstring
 nmap <silent> ga <Plug>(coc-codeaction-line)
@@ -54,6 +48,7 @@ set nowrap
 set tabstop=4
 set shiftwidth=4
 set expandtab
+set smartindent
 
 imap <C-s> <C-O>:w<CR>
 nmap <C-s> :w<CR>
@@ -98,8 +93,6 @@ imap <C-l> <C-O>:foldclose<CR>
 imap <C-k> <C-O>:foldopen<CR>
 imap <Home> <C-O>^
 
-" symplifold
-" set foldmethod=indent
 
 " themes
 colorscheme darcula-solid
@@ -107,13 +100,6 @@ set termguicolors
 set background=dark
 " let g:gruvbox_material_background='hard'
 " colorscheme gruvbox-material
-
-
-" panel bar
-let NERDTreeQuitOnOpen=1
-let NERDTreeShowHidden=1
-imap <C-b> <C-O>:NERDTreeToggle<CR>
-nmap <C-b> :NERDTreeToggle<CR>
 
 " tmux-navigator
 let g:tmux_navigator_no_mappings = 1
