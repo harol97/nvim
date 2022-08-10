@@ -24,7 +24,7 @@ inoremap <silent><expr> <c-space> coc#refresh()
 " go to definition
 nmap <silent> gd <Plug>(coc-definition)
 
-" install coc-explorer
+" coc-explorer
 nmap <c-b> <Cmd>CocCommand explorer<CR>
 imap <c-b> <C-O>:CocCommand explorer<CR><C-O>
 
@@ -36,19 +36,19 @@ nmap <silent> ga <Plug>(coc-codeaction-line)
 xmap <silent> ga <Plug>(coc-codeaction-selected)
 nmap <silent> gA <Plug>(coc-codeaction)
 
+" solo cuando veo que no siguen el estandar
+let g:python_recommended_style=0
+
 " config nvim
 set number
-se mouse=a
-set clipboard=unnamedplus
 set showcmd
+set mouse=a
+set clipboard=unnamedplus
 set encoding=UTF-8
 
-set nospell
 set nowrap
-set tabstop=4
 set shiftwidth=4
 set expandtab
-set smartindent
 
 imap <C-s> <C-O>:w<CR>
 nmap <C-s> :w<CR>
