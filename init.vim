@@ -1,8 +1,6 @@
 call plug#begin("~/.local/share/nvim/plugged")
 
 Plug 'rktjmp/lush.nvim'
-Plug 'Townk/vim-autoclose'
-Plug 'alvan/vim-closetag'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'neoclide/coc.nvim',{'branch': 'release'}
 Plug 'jiangmiao/auto-pairs'
@@ -10,7 +8,7 @@ Plug 'briones-gabriel/darcula-solid.nvim'
 Plug 'rktjmp/lush.nvim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'https://github.com/Konfekt/FastFold'
+Plug 'https://github.com/morhetz/gruvbox'
 
 call plug#end()
 
@@ -21,8 +19,12 @@ syntax on
 inoremap <silent><expr> <c-space> coc#refresh()
 
 " coc configuration
+
 " go to definition
 nmap <silent> gd <Plug>(coc-definition)
+
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 " coc-explorer
 nmap <c-b> <Cmd>CocCommand explorer<CR>
@@ -68,38 +70,12 @@ imap <S-Tab> <C-d>
 nmap <Tab> >>
 nmap <S-Tab> <<
 
-" fastfold
-let g:markdown_folding = 1
-let g:rst_fold_enabled = 1
-let g:tex_fold_enabled = 1
-let g:vimsyn_folding = 'af'
-let g:xml_syntax_folding = 1
-let g:javaScript_fold = 1
-let g:sh_fold_enabled= 7
-let g:zsh_fold_enable = 1
-let g:ruby_fold = 1
-let g:perl_fold = 1
-let g:perl_fold_blocks = 1
-let g:r_syntax_folding = 1
-let g:rust_fold = 1
-let g:php_folding = 1
-let g:fortran_fold=1
-let g:clojure_fold = 1
-let g:baan_fold=1
-autocmd FileType python setlocal foldmethod=indent
-nmap <C-k> :foldopen<CR>
-nmap <C-l> :foldclose<CR>
-imap <C-l> <C-O>:foldclose<CR>
-imap <C-k> <C-O>:foldopen<CR>
-imap <Home> <C-O>^
-
-
 " themes
-colorscheme darcula-solid
-set termguicolors
+"colorscheme darcula-solid
 set background=dark
-" let g:gruvbox_material_background='hard'
-" colorscheme gruvbox-material
+let g:gruvbox_contrast_dark='hard'
+colorscheme gruvbox
+set termguicolors
 
 " tmux-navigator
 let g:tmux_navigator_no_mappings = 1
@@ -111,19 +87,3 @@ imap <c-up>  <C-O>:TmuxNavigateUp<cr>
 nmap <c-up> :TmuxNavigateUp<cr>
 imap <c-right>  <C-O>:TmuxNavigateRight<cr>
 nmap <c-right> :TmuxNavigateRight<cr>
-" nnoremap <silent> {Previous-Mapping} :TmuxNavigatePrevious<cr>
-
-" closetag
-let g:closetag_filenames = '*.html,*.xhtml,*.phtml, *.js, *.xml'
-let g:closetag_xhtml_filenames = '*.xhtml,*.jsx,*.xml'
-let g:closetag_filetypes = 'html,xhtml,phtml,xml'
-let g:closetag_xhtml_filetypes = 'xhtml,jsx,xml'
-let g:closetag_emptyTags_caseSensitive = 1
-let g:closetag_regions = {
-    \ 'typescript.tsx': 'jsxRegion,tsxRegion',
-    \ 'javascript.jsx': 'jsxRegion',
-    \ 'typescriptreact': 'jsxRegion,tsxRegion',
-    \ 'javascriptreact': 'jsxRegion',
-    \ }
-let g:closetag_shortcut = '>'
-let g:closetag_close_shortcut = '<leader>>'
