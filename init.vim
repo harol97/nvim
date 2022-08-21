@@ -87,3 +87,10 @@ imap <c-up>  <C-O>:TmuxNavigateUp<cr>
 nmap <c-up> :TmuxNavigateUp<cr>
 imap <c-right>  <C-O>:TmuxNavigateRight<cr>
 nmap <c-right> :TmuxNavigateRight<cr>
+
+" coc-python (for python2)
+" coc-jedi (for python3)
+" coc-pairs
+" coc-explorer
+" coc-html
+" coc--tsserver
