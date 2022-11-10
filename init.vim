@@ -67,8 +67,6 @@ imap <Home> <C-O>^
 nmap <Home> ^
 
 set nowrap
-set shiftwidth=4
-set expandtab
 
 imap <C-s> <C-O>:w<CR>
 nmap <C-s> :w<CR>
