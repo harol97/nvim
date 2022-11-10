@@ -67,6 +67,11 @@ imap <Home> <C-O>^
 nmap <Home> ^
 
 set nowrap
+set expandtab
+set autoindent
+set smarttab
+set cindent
+autocmd FileType javascript setlocal sw=2
 
 imap <C-s> <C-O>:w<CR>
 nmap <C-s> :w<CR>
