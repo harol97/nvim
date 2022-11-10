@@ -1,40 +1,50 @@
 call plug#begin("~/.local/share/nvim/plugged")
-
+Plug 'jremmen/vim-ripgrep'
 Plug 'rktjmp/lush.nvim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'neoclide/coc.nvim',{'branch': 'release'}
-Plug 'briones-gabriel/darcula-solid.nvim'
 Plug 'rktjmp/lush.nvim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'briones-gabriel/darcula-solid.nvim'
 
 call plug#end()
 
 syntax on
 
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+" terminal
+
+nmap <C-j> <Plug>(coc-terminal-toggle)<CR>
+imap <C-j> <Plug>(coc-terminal-toggle)<CR>
+
+
+" multicursor
+
+nmap <silent> <C-c> <Plug>(coc-cursors-position)
+nmap <silent> <C-d> <Plug>(coc-cursors-word)
+xmap <silent> <C-d> <Plug>(coc-cursors-range)
+" use normal command like `<leader>xi(`
+nmap <leader>x  <Plug>(coc-cursors-operator)
+
+
+"reload nvim
+imap <F9> <C-O>:source $MYVIMRC<CR>
+nmap <F9> :source $MYVIMRC<CR>
+
 " autocomplete
 inoremap <silent><expr> <c-space> coc#refresh()
 
 " coc configuration
-
 " go to definition
 nmap <silent> gd <Plug>(coc-definition)
 
-inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
-                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
-" multicursor
-nmap <silent> <C-c> <Plug>(coc-cursors-position)
-nmap <silent> <C-d> <Plug>(coc-cursors-word)
-xmap <silent> <C-d> <Plug>(coc-cursors-range)
-nmap <leader>x <Plug>(coc-cursors-operator)
 
 " coc-explorer
 nmap <c-b> <Cmd>CocCommand explorer<CR>
-imap <c-b> <C-O>:CocCommand explorer<CR><C-O>
-
-" relad nvim
-imap <F9> <C-O>:source $MYVIMRC<CR>
-nmap <F9> :source $MYVIMRC<CR>
+imap <c-b> <C-O>:CocCommand explorer <Enter><C-O>
 
 "airline
 let g:airline_theme='distinguished'
@@ -45,7 +55,7 @@ xmap <silent> ga <Plug>(coc-codeaction-selected)
 nmap <silent> gA <Plug>(coc-codeaction)
 
 " solo cuando veo que no siguen el estandar
-let g:python_recommended_style=0
+" let g:python_recommended_style=0
 
 " config nvim
 set number
@@ -78,6 +88,11 @@ imap <S-Tab> <C-d>
 nmap <Tab> >>
 nmap <S-Tab> <<
 
+" themes
+set termguicolors
+set background=dark
+colorscheme darcula-solid
+
 " tmux-navigator
 let g:tmux_navigator_no_mappings = 1
 imap <c-left> <C-O>:TmuxNavigateLeft<cr>
@@ -88,11 +103,6 @@ imap <c-up>  <C-O>:TmuxNavigateUp<cr>
 nmap <c-up> :TmuxNavigateUp<cr>
 imap <c-right>  <C-O>:TmuxNavigateRight<cr>
 nmap <c-right> :TmuxNavigateRight<cr>
-
-" themes
-colorscheme darcula-solid
-set background=dark
-set termguicolors
 
 " coc-python (for python2)
 " coc-pyright (for python3)
