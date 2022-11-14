@@ -73,6 +73,8 @@ set smarttab
 set cindent
 autocmd FileType javascript setlocal sw=2
 
+" sudo apt-get install xclip
+
 imap <C-s> <C-O>:w<CR>
 nmap <C-s> :w<CR>
 imap <C-e> <C-O>:u<CR>
