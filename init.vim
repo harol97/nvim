@@ -22,11 +22,11 @@ imap <C-j> <Plug>(coc-terminal-toggle)<CR>
 
 
 " multicursor
+nmap <C-c> <Cmd>\\\<CR>
 
 nmap <silent> <C-c> <Plug>(coc-cursors-position)
 nmap <silent> <C-d> <Plug>(coc-cursors-word)
 xmap <silent> <C-d> <Plug>(coc-cursors-range)
-" use normal command like `<leader>xi(`
 nmap <leader>x  <Plug>(coc-cursors-operator)
 
 
@@ -58,6 +58,7 @@ nmap <silent> gA <Plug>(coc-codeaction)
 " let g:python_recommended_style=0
 
 " config nvim
+filetype plugin indent on
 set number
 set showcmd
 set mouse=a
@@ -66,13 +67,11 @@ set encoding=UTF-8
 imap <Home> <C-O>^
 nmap <Home> ^
 
-set nowrap
-set expandtab
-set autoindent
-set smarttab
-set cindent
 autocmd FileType javascript setlocal sw=2
-
+autocmd FileType java setlocal sw=2
+autocmd FileType javascriptreact setlocal sw=2
+autocmd FileType typescript setlocal sw=2
+autocmd FileType typescriptreact setlocal sw=2 cindent
 " sudo apt-get install xclip
 
 imap <C-s> <C-O>:w<CR>
@@ -115,3 +114,4 @@ nmap <c-right> :TmuxNavigateRight<cr>
 " coc-explorer
 " coc-html
 " coc-tsserver
+
