@@ -66,12 +66,11 @@ set clipboard=unnamedplus
 set encoding=UTF-8
 imap <Home> <C-O>^
 nmap <Home> ^
-
-autocmd FileType javascript setlocal sw=2
-autocmd FileType java setlocal sw=2
-autocmd FileType javascriptreact setlocal sw=2
-autocmd FileType typescript setlocal sw=2
-autocmd FileType typescriptreact setlocal sw=2 cindent
+autocmd FileType javascript setlocal sw=2 expandtab
+autocmd FileType java setlocal sw=2 expandtab
+autocmd FileType javascriptreact setlocal sw=2 expandtab
+autocmd FileType typescript setlocal sw=2 expandtab
+autocmd FileType typescriptreact setlocal sw=2 expandtab
 " sudo apt-get install xclip
 
 imap <C-s> <C-O>:w<CR>
@@ -114,4 +113,3 @@ nmap <c-right> :TmuxNavigateRight<cr>
 " coc-explorer
 " coc-html
 " coc-tsserver
-
