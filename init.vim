@@ -46,8 +46,9 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <c-b> <Cmd>CocCommand explorer<CR>
 imap <c-b> <C-O>:CocCommand explorer <Enter><C-O>
 
-"airline
-let g:airline_theme='distinguished'
+" airline
+" let g:airline_theme='distinguished'
+let g:airline_theme='zenburn'
 
 " docstring
 nmap <silent> ga <Plug>(coc-codeaction-line)
