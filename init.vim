@@ -113,3 +113,4 @@ nmap <c-right> :TmuxNavigateRight<cr>
 " coc-explorer
 " coc-html
 " coc-tsserver
+" nerd font -> FantasqueSansMono Nerd Font Mono
