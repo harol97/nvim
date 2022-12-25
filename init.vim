@@ -47,8 +47,7 @@ nmap <c-b> <Cmd>CocCommand explorer<CR>
 imap <c-b> <C-O>:CocCommand explorer <Enter><C-O>
 
 " airline
-" let g:airline_theme='distinguished'
-let g:airline_theme='zenburn'
+let g:airline_theme='distinguished'
 
 " docstring
 nmap <silent> ga <Plug>(coc-codeaction-line)
@@ -72,6 +71,8 @@ autocmd FileType java setlocal sw=2 expandtab
 autocmd FileType javascriptreact setlocal sw=2 expandtab
 autocmd FileType typescript setlocal sw=2 expandtab
 autocmd FileType typescriptreact setlocal sw=2 expandtab
+autocmd FileType html setlocal sw=4 expandtab
+autocmd FileType htmldjango setlocal sw=4 expandtab
 " sudo apt-get install xclip
 
 imap <C-s> <C-O>:w<CR>
