@@ -10,6 +10,7 @@ Plug 'briones-gabriel/darcula-solid.nvim'
 
 call plug#end()
 
+
 syntax on
 
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
@@ -42,7 +43,7 @@ inoremap <silent><expr> <c-space> coc#refresh()
 nmap <silent> gd <Plug>(coc-definition)
 
 
-" coc-explorer
+" explorer
 nmap <c-b> <Cmd>CocCommand explorer<CR>
 imap <c-b> <C-O>:CocCommand explorer <Enter><C-O>
 
@@ -66,10 +67,8 @@ set clipboard=unnamedplus
 set encoding=UTF-8
 imap <Home> <C-O>^
 nmap <Home> ^
-
-set sw=2
+set sw=4
 set expandtab
-
 autocmd FileType javascript setlocal sw=2 expandtab
 autocmd FileType java setlocal sw=2 expandtab
 autocmd FileType javascriptreact setlocal sw=2 expandtab
@@ -77,19 +76,20 @@ autocmd FileType typescript setlocal sw=2 expandtab
 autocmd FileType typescriptreact setlocal sw=2 expandtab
 autocmd FileType html setlocal sw=4 expandtab
 autocmd FileType htmldjango setlocal sw=4 expandtab
-autocmd FileType scss setlocal sw=2 expandtab
-autocmd FileType css setlocal sw=2 expandtab
+autocmd FileType cpp let b:coc_pairs_disabled = ['<']
+autocmd FileType cpp setlocal sw=2 expandtab
 " sudo apt-get install xclip
 
 imap <C-s> <C-O>:w<CR>
 nmap <C-s> :w<CR>
-imap <C-e> <C-O>:u<CR>
-nmap <C-e> :u<CR>
+imap <C-r> <C-O>:u<CR>
+nmap <C-r> :u<CR>
 imap <C-w> <C-O>:q<CR>
 nmap <C-w> :q<CR>
 imap <C-x> <C-O>:qa<CR>
 nmap <C-x> :qa<CR>
-imap <C-r> <C-O>:redo<CR>
+imap <C-y> <C-O>:redo<CR>
+nmap <C-y> :redo<CR>
 imap <C-f> <C-O>:sp<CR>
 nmap <C-f> :sp<CR>
 imap <C-g> <C-O>:vsp<CR>
@@ -120,7 +120,6 @@ nmap <c-right> :TmuxNavigateRight<cr>
 " coc-pairs
 " coc-explorer
 " coc-html
-" coc-css
-" coc-cssmodules
 " coc-tsserver
+" coc-clangd
 " nerd font -> FantasqueSansMono Nerd Font Mono
