@@ -10,6 +10,9 @@ Plug 'briones-gabriel/darcula-solid.nvim'
 
 call plug#end()
 
+autocmd BufWritePre * :silent call CocAction('runCommand', 'editor.action.organizeImport')
+" command! -nargs=0 OR   :silent call CocAction('runCommand', 'editor.action.organizeImport') averiguar para que sirve
+
 syntax on
 
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
@@ -123,3 +126,6 @@ nmap <c-right> :TmuxNavigateRight<cr>
 " coc-tsserver
 " coc-css
 " nerd font -> FantasqueSansMono Nerd Font Mono
+"
+
+
