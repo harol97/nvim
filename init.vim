@@ -54,6 +54,7 @@ nmap <silent> ga <Plug>(coc-codeaction-line)
 xmap <silent> ga <Plug>(coc-codeaction-selected)
 nmap <silent> gA <Plug>(coc-codeaction)
 
+
 " solo cuando veo que no siguen el estandar
 " let g:python_recommended_style=0
 
@@ -73,7 +74,7 @@ autocmd FileType java setlocal sw=2 expandtab
 autocmd FileType javascriptreact setlocal sw=2 expandtab
 autocmd FileType typescript setlocal sw=2 expandtab
 autocmd FileType typescriptreact setlocal sw=2 expandtab
-autocmd FileType html setlocal sw=4 expandtab
+autocmd FileType html setlocal sw=2 expandtab
 autocmd FileType htmldjango setlocal sw=4 expandtab
 autocmd FileType scss setlocal sw=2 expandtab
 autocmd FileType css setlocal sw=2 expandtab
