@@ -125,6 +125,9 @@ nmap <c-right> :TmuxNavigateRight<cr>
 " coc-html
 " coc-tsserver
 " coc-css
+" coc-prettier
+" coc-markdown-preview-enhanced
+" coc-pydocstring
 " nerd font -> FantasqueSansMono Nerd Font Mono
 "
 
