@@ -7,6 +7,10 @@ Plug 'rktjmp/lush.nvim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'briones-gabriel/darcula-solid.nvim'
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-telescope/telescope-media-files.nvim'
 
 call plug#end()
 
@@ -129,6 +133,7 @@ nmap <c-right> :TmuxNavigateRight<cr>
 " coc-markdown-preview-enhanced
 " coc-pydocstring
 " nerd font -> FantasqueSansMono Nerd Font Mono
-"
+" to see images red https://github.com/nvim-telescope/telescope-media-files.nvim
+"  to see images need rp and maybe chafa
 
 
