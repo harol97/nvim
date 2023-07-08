@@ -11,5 +11,6 @@
     "explorer.quitOnOpen": true,
     "html.filetypes":["html","handlebars","htmldjango","blade","javascript"],
     "prettier.disableLanguages":["python"],
-    "pyright.organizeimports.provider":"pyright"    
+    "pyright.organizeimports.provider":"pyright",
+    "java.jdt.ls.java.home": "/usr/lib/jvm/java-17-openjdk-amd64"
 }
