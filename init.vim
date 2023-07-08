@@ -11,6 +11,8 @@ Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-media-files.nvim'
+Plug 'https://github.com/ellisonleao/gruvbox.nvim'
+
 
 call plug#end()
 
@@ -109,7 +111,9 @@ nmap <S-Tab> <<
 " themes
 set termguicolors
 set background=dark
-colorscheme darcula-solid
+" colorscheme darcula-solid
+colorscheme gruvbox
+
 
 " tmux-navigator
 let g:tmux_navigator_no_mappings = 1
@@ -132,6 +136,8 @@ nmap <c-right> :TmuxNavigateRight<cr>
 " coc-prettier
 " coc-markdown-preview-enhanced
 " coc-pydocstring
+" coc-java
+" coc-json
 " nerd font -> FantasqueSansMono Nerd Font Mono
 " to see images red https://github.com/nvim-telescope/telescope-media-files.nvim
 "  to see images need rp and maybe chafa
