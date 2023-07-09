@@ -2,7 +2,6 @@
     "coc.preferences.jumpCommand": "split",
     "coc.preferences.formatOnSave":true,
     "coc.preferences.formatOnType": true,
-    "coc.preferences.formatOnSaveFiletypes":["*"],
     "explorer.icon.enableNerdfont":true,
     "explorer.file.showHiddenFiles": true,
     "explorer.file.child.template": "[git | 2] [selection | clip | 1] [indent][icon | 1] [diagnosticError & 1][filename omitCenter 1][modified][readonly] [linkIcon & 1][link growRight 1 omitCenter 5]",
@@ -12,5 +11,6 @@
     "html.filetypes":["html","handlebars","htmldjango","blade","javascript"],
     "prettier.disableLanguages":["python"],
     "pyright.organizeimports.provider":"pyright",
-    "java.jdt.ls.java.home": "/usr/lib/jvm/java-17-openjdk-amd64"
+    "java.jdt.ls.java.home": "/usr/lib/jvm/java-17-openjdk-amd64",
+    "java.saveActions.organizeImports": true
 }
