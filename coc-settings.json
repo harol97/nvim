@@ -11,6 +11,5 @@
     "html.filetypes":["html","handlebars","htmldjango","blade","javascript"],
     "prettier.disableLanguages":["python"],
     "pyright.organizeimports.provider":"pyright",
-    "java.jdt.ls.java.home": "/usr/lib/jvm/java-17-openjdk-amd64",
     "java.saveActions.organizeImports": true
 }
