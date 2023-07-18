@@ -12,7 +12,8 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-media-files.nvim'
 Plug 'https://github.com/ellisonleao/gruvbox.nvim'
-
+Plug 'tpope/vim-fugitive'
+Plug 'rbong/vim-flog'
 
 call plug#end()
 
@@ -140,6 +141,7 @@ nmap <c-right> :TmuxNavigateRight<cr>
 " coc-json
 " nerd font -> FantasqueSansMono Nerd Font Mono
 " to see images red https://github.com/nvim-telescope/telescope-media-files.nvim
+" git graph https://github.com/rbong/vim-flog
 "  to see images need rp and maybe chafa
 
 
