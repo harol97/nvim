@@ -14,6 +14,8 @@ Plug 'nvim-telescope/telescope-media-files.nvim'
 Plug 'https://github.com/ellisonleao/gruvbox.nvim'
 Plug 'tpope/vim-fugitive'
 Plug 'rbong/vim-flog'
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
 
 call plug#end()
 
