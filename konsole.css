@@ -1,5 +1,6 @@
-QTabBar {
+QWidget, QTabBar {
   background-color: #2a2b2b;
+  color:white;
 }
 
 QTabBar::tab {
