@@ -3,6 +3,11 @@ QWidget, QTabBar {
   color:white;
 }
 
+QLineEdit {
+  color: black;
+  background-color: white;
+}
+
 QTabBar::tab {
   background-color: #343636;
   color: white;
