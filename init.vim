@@ -81,6 +81,7 @@ imap <Home> <C-O>^
 nmap <Home> ^
 set sw=2
 set expandtab
+set nowrap
 autocmd FileType javascript setlocal sw=2 expandtab
 autocmd FileType java setlocal sw=2 expandtab
 autocmd FileType javascriptreact setlocal sw=2 expandtab
