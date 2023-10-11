@@ -147,6 +147,7 @@ nmap <c-right> :TmuxNavigateRight<cr>
 " coc-pydocstring
 " coc-java
 " coc-json
+" coc-eslint
 " nerd font -> FantasqueSansMono Nerd Font Mono
 " to see images red https://github.com/nvim-telescope/telescope-media-files.nvim
 " git graph https://github.com/rbong/vim-flog
