@@ -15,7 +15,6 @@ Plug 'https://github.com/ellisonleao/gruvbox.nvim'
 Plug 'tpope/vim-fugitive'
 Plug 'rbong/vim-flog'
 Plug 'davidgranstrom/nvim-markdown-preview'
-Plug 'olimorris/onedarkpro.nvim'
 Plug 'https://github.com/navarasu/onedark.nvim'
 
 call plug#end()
