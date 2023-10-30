@@ -16,6 +16,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'rbong/vim-flog'
 Plug 'davidgranstrom/nvim-markdown-preview'
 Plug 'olimorris/onedarkpro.nvim'
+Plug 'https://github.com/navarasu/onedark.nvim'
 
 call plug#end()
 
@@ -117,6 +118,9 @@ set termguicolors
 set background=dark
 " colorscheme darcula-solid
 " colorscheme gruvbox
+let g:onedark_config = {
+  \ 'style': 'dark',
+\ }
 colorscheme onedark
 
 
