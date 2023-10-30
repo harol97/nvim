@@ -14,8 +14,8 @@ Plug 'nvim-telescope/telescope-media-files.nvim'
 Plug 'https://github.com/ellisonleao/gruvbox.nvim'
 Plug 'tpope/vim-fugitive'
 Plug 'rbong/vim-flog'
-Plug 'https://github.com/navarasu/onedark.nvim'
 Plug 'davidgranstrom/nvim-markdown-preview'
+Plug 'olimorris/onedarkpro.nvim'
 
 call plug#end()
 
@@ -117,9 +117,6 @@ set termguicolors
 set background=dark
 " colorscheme darcula-solid
 " colorscheme gruvbox
-let g:onedark_config = {
-    \ 'style':'dark'
-    \ }
 colorscheme onedark
 
 
