@@ -12,5 +12,19 @@
     "eslint.format.enable": true,
     "html.filetypes":["html","handlebars","htmldjango","blade","javascript"],
     "pyright.organizeimports.provider":"pyright",
-    "java.saveActions.organizeImports": true
+    "java.saveActions.organizeImports": true,
+    "html.filetypes": [
+    "html",
+    "handlebars",
+    "htmldjango",
+    "blade",
+    "javascript"
+  ],
+    "pyright.enable": false,
+  "prettier.enable": false,
+  "prettier.disableLanguages": [
+    "python",
+    "react",
+    "json"
+  ]
 }
