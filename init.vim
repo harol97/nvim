@@ -14,19 +14,38 @@ Plug 'nvim-telescope/telescope-media-files.nvim'
 Plug 'https://github.com/ellisonleao/gruvbox.nvim'
 Plug 'tpope/vim-fugitive'
 Plug 'rbong/vim-flog'
-Plug 'davidgranstrom/nvim-markdown-preview'
+Plug 'tpope/vim-fugitive'
+Plug 'rbong/vim-flog'
+Plug 'cdmedia/itg_flat_vim'
+Plug 'josuegaleas/jay'
+Plug 'https://github.com/xiantang/darcula-dark.nvim'
+Plug 'https://github.com/parkerault/onivim-theme-hybrid'
 Plug 'https://github.com/navarasu/onedark.nvim'
+Plug 'davidgranstrom/nvim-markdown-preview'
 Plug 'kaicataldo/material.vim', { 'branch': 'main' }
+" Vim-Plug
+"Plug 'olimorris/onedarkpro.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.4' }
 
 call plug#end()
 
-autocmd BufWritePre * :silent call CocAction('runCommand', 'editor.action.organizeImport')
-" command! -nargs=0 OR   :silent call CocAction('runCommand', 'editor.action.organizeImport') averiguar para que sirve
+source $HOME/.config/nvim/file.lua
+
+autocmd BufWritePre * silent! call CocAction('runCommand', 'editor.action.organizeImport')
 
 syntax on
 
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
                               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+"teleescope
+" Find files using Telescope command-line sugar.
+nnoremap ff <cmd>Telescope find_files<cr>
+nnoremap fg <cmd>Telescope live_grep<cr>
+nnoremap fb <cmd>Telescope buffers<cr>
+nnoremap fh <cmd>Telescope help_tags<cr>
+"telescop
 
 " terminal
 
@@ -84,7 +103,8 @@ set sw=2
 set expandtab
 set nowrap
 autocmd FileType javascript setlocal sw=2 expandtab
-autocmd FileType java setlocal sw=2 expandtab
+autocmd FileType java setlocal sw=8 noexpandtab 
+autocmd FileType xml setlocal sw=8 noexpandtab 
 autocmd FileType javascriptreact setlocal sw=2 expandtab
 autocmd FileType typescript setlocal sw=2 expandtab
 autocmd FileType typescriptreact setlocal sw=2 expandtab
@@ -116,27 +136,23 @@ nmap <S-Tab> <<
 " themes
 set termguicolors
 set background=dark
-" colorscheme darcula-solid
-" colorscheme gruvbox
-let g:material_theme_style = 'default'
-colorscheme material
-" let g:onedark_config = {
-"   \ 'style': 'dark',
-" \ }
-" colorscheme onedark
+"colorscheme gruvbox
 
-
+let g:onedark_config = {
+  \ 'style': 'dark',
+\ }
+colorscheme onedark
 
 " tmux-navigator
 let g:tmux_navigator_no_mappings = 1
-imap <c-left> <C-O>:TmuxNavigateLeft<cr>
-nmap <c-left> :TmuxNavigateLeft<cr>
-imap <c-down> <C-O>:TmuxNavigateDown<cr>
-nmap <c-down> :TmuxNavigateDown<cr>
-imap <c-up>  <C-O>:TmuxNavigateUp<cr>
-nmap <c-up> :TmuxNavigateUp<cr>
-imap <c-right>  <C-O>:TmuxNavigateRight<cr>
-nmap <c-right> :TmuxNavigateRight<cr>
+imap <S-left> <C-O>:TmuxNavigateLeft<cr>
+nmap <S-left> :TmuxNavigateLeft<cr>
+imap <S-down> <C-O>:TmuxNavigateDown<cr>
+nmap <S-down> :TmuxNavigateDown<cr>
+imap <S-up>  <C-O>:TmuxNavigateUp<cr>
+nmap <S-up> :TmuxNavigateUp<cr>
+imap <S-right>  <C-O>:TmuxNavigateRight<cr>
+nmap <S-right> :TmuxNavigateRight<cr>
 
 " coc-python (for python2)
 " coc-pyright (for python3)
@@ -148,12 +164,8 @@ nmap <c-right> :TmuxNavigateRight<cr>
 " coc-prettier
 " coc-markdown-preview-enhanced
 " coc-pydocstring
-" coc-java
 " coc-json
-" coc-eslint
 " nerd font -> FantasqueSansMono Nerd Font Mono
-" to see images red https://github.com/nvim-telescope/telescope-media-files.nvim
-" git graph https://github.com/rbong/vim-flog
-"  to see images need rp and maybe chafa
+
 
 
