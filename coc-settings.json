@@ -26,5 +26,6 @@
     "python",
     "react",
     "json"
-  ]
+  ],
+    "inlayHint.enable": false
 }
