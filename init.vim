@@ -132,6 +132,8 @@ imap <Tab> <C-t>
 imap <S-Tab> <C-d>
 nmap <Tab> >>
 nmap <S-Tab> <<
+nmap ñ :m-2<CR>
+nmap , :m+1<CR>
 
 " themes
 set termguicolors
