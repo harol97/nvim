@@ -1,4 +1,5 @@
 {
+    "html.format.enable": false,
     "coc.preferences.jumpCommand": "split",
     "coc.preferences.formatOnSave":true,
     "coc.preferences.formatOnType": true,
