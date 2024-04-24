@@ -176,6 +176,6 @@ nmap <S-right> :TmuxNavigateRight<cr>
 " coc-json
 " nerd font -> FantasqueSansMono Nerd Font Mono
 
-sure XDG_CONFIG_HOME set export XDG_CONFIG_HOME="$HOME/.config"
+"sure XDG_CONFIG_HOME set export XDG_CONFIG_HOME="$HOME/.config"
 
 
