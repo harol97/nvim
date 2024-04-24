@@ -27,6 +27,7 @@ Plug 'kaicataldo/material.vim', { 'branch': 'main' }
 "Plug 'olimorris/onedarkpro.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.4' }
+Plug 'udalov/kotlin-vim'
 
 call plug#end()
 
@@ -113,6 +114,12 @@ autocmd FileType htmldjango setlocal sw=4 expandtab
 autocmd FileType scss setlocal sw=2 expandtab
 autocmd FileType css setlocal sw=2 expandtab
 " sudo apt-get install xclip
+"
+" clipboard
+
+" now it is possible to paste many times over selected text
+xnoremap <expr> p 'pgv"'.v:register.'y`>'
+xnoremap <expr> P 'Pgv"'.v:register.'y`>'
 
 imap <C-s> <C-O>:w<CR>
 nmap <C-s> :w<CR>
@@ -141,7 +148,7 @@ set background=dark
 "colorscheme gruvbox
 
 let g:onedark_config = {
-  \ 'style': 'dark',
+  \ 'style': 'darker',
 \ }
 colorscheme onedark
 
