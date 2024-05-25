@@ -121,6 +121,8 @@ autocmd FileType css setlocal sw=2 expandtab
 xnoremap <expr> p 'pgv"'.v:register.'y`>'
 xnoremap <expr> P 'Pgv"'.v:register.'y`>'
 
+" unmap <C-W><C-D> "just is necessary
+" unmap <C-W>d "just is necessary
 imap <C-s> <C-O>:w<CR>
 nmap <C-s> :w<CR>
 imap <C-r> <C-O>:u<CR>
