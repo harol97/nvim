@@ -66,6 +66,8 @@ nmap <leader>x  <Plug>(coc-cursors-operator)
 "reload nvim
 imap <F9> <C-O>:source $MYVIMRC<CR>
 nmap <F9> :source $MYVIMRC<CR>
+imap <F8> <C-O>:CocRestart<CR>
+nmap <F8> :CocRestart<CR>
 
 " autocomplete
 inoremap <silent><expr> <c-space> coc#refresh()
