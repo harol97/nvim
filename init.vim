@@ -1,3 +1,7 @@
+" unmap <C-W><C-D> "just is necessary
+" unmap <C-W>d "just is necessary
+
+
 call plug#begin("~/.local/share/nvim/plugged")
 Plug 'jremmen/vim-ripgrep'
 Plug 'rktjmp/lush.nvim'
@@ -28,6 +32,8 @@ Plug 'kaicataldo/material.vim', { 'branch': 'main' }
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.4' }
 Plug 'udalov/kotlin-vim'
+Plug 'nvim-tree/nvim-web-devicons'
+Plug 'nvim-tree/nvim-tree.lua'
 
 call plug#end()
 
@@ -37,9 +43,9 @@ autocmd BufWritePre * silent! call CocAction('runCommand', 'editor.action.organi
 
 syntax on
 
+
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
                               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
-
 "teleescope
 " Find files using Telescope command-line sugar.
 nnoremap ff <cmd>Telescope find_files<cr>
@@ -48,11 +54,12 @@ nnoremap fb <cmd>Telescope buffers<cr>
 nnoremap fh <cmd>Telescope help_tags<cr>
 "telescop
 
+
+
 " terminal
 
 nmap <C-j> <Plug>(coc-terminal-toggle)<CR>
 imap <C-j> <Plug>(coc-terminal-toggle)<CR>
-
 
 " multicursor
 nmap <C-c> <Cmd>\\\<CR>
@@ -61,6 +68,7 @@ nmap <silent> <C-c> <Plug>(coc-cursors-position)
 nmap <silent> <C-d> <Plug>(coc-cursors-word)
 xmap <silent> <C-d> <Plug>(coc-cursors-range)
 nmap <leader>x  <Plug>(coc-cursors-operator)
+
 
 
 "reload nvim
@@ -78,8 +86,8 @@ nmap <silent> gd <Plug>(coc-definition)
 
 
 " explorer
-nmap <c-b> <Cmd>CocCommand explorer<CR>
-imap <c-b> <C-O>:CocCommand explorer <Enter><C-O>
+nmap <c-b> <Cmd>NvimTreeToggle<CR>
+imap <c-b> <C-O>:NvimTreeToggle<Enter><C-O>
 
 " airline
 let g:airline_theme='wombat'
@@ -123,8 +131,6 @@ autocmd FileType css setlocal sw=2 expandtab
 xnoremap <expr> p 'pgv"'.v:register.'y`>'
 xnoremap <expr> P 'Pgv"'.v:register.'y`>'
 
-" unmap <C-W><C-D> "just is necessary
-" unmap <C-W>d "just is necessary
 imap <C-s> <C-O>:w<CR>
 nmap <C-s> :w<CR>
 imap <C-r> <C-O>:u<CR>
@@ -181,5 +187,4 @@ nmap <S-right> :TmuxNavigateRight<cr>
 " nerd font -> FantasqueSansMono Nerd Font Mono
 
 "sure XDG_CONFIG_HOME set export XDG_CONFIG_HOME="$HOME/.config"
-
-
+"
