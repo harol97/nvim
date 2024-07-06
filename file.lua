@@ -65,10 +65,20 @@ require("nvim-tree").setup({
   },
   filters = {
     dotfiles = false,
-  },
+  }, 
   actions = {
     open_file = {
       quit_on_open=true
     }
+  },
+  update_focused_file = {
+    enable = true,
   }
 })
+
+-- if use want to see always files ignored by .gitignore so wiete in ntim-tree setup. If only whant to see for a moment in noprmal mode use I
+-- git ={
+-- ignore=false
+--  },
+--
+--
