@@ -1,5 +1,6 @@
 {
   "html.format.enable": false,
+  "python.analysis.autoSearchPaths": false,
   "python.analysis.diagnosticMode": "workspace",
   "coc.preferences.jumpCommand": "split",
   "coc.preferences.formatOnSave": true,
