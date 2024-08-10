@@ -1,3 +1,5 @@
+unmap <C-W><C-D>
+unmap <C-W>d
 " unmap <C-W><C-D> "just is necessary
 " unmap <C-W>d "just is necessary
 
@@ -65,8 +67,8 @@ imap <C-j> <Plug>(coc-terminal-toggle)<CR>
 nmap <C-c> <Cmd>\\\<CR>
 
 nmap <silent> <C-c> <Plug>(coc-cursors-position)
-nmap <silent> <C-d> <Plug>(coc-cursors-word)
-xmap <silent> <C-d> <Plug>(coc-cursors-range)
+"nmap <silent> <C-d> <Plug>(coc-cursors-word)
+"xmap <silent> <C-d> <Plug>(coc-cursors-range)
 nmap <leader>x  <Plug>(coc-cursors-operator)
 
 
@@ -86,7 +88,7 @@ nmap <silent> gd <Plug>(coc-definition)
 
 
 " explorer
-nmap <c-b> <Cmd>NvimTreeToggle<CR>
+nmap <space>b <Cmd>NvimTreeToggle<CR>
 imap <c-b> <C-O>:NvimTreeToggle<Enter><C-O>
 
 " airline
@@ -134,23 +136,16 @@ xnoremap <expr> P 'Pgv"'.v:register.'y`>'
 imap <C-s> <C-O>:w<CR>
 nmap <C-s> :w<CR>
 imap <C-r> <C-O>:u<CR>
-nmap <C-r> :u<CR>
 imap <C-w> <C-O>:q<CR>
 nmap <C-w> :q<CR>
 imap <C-x> <C-O>:qa<CR>
 nmap <C-x> :qa<CR>
-imap <C-y> <C-O>:redo<CR>
-nmap <C-y> :redo<CR>
-imap <C-f> <C-O>:sp<CR>
-nmap <C-f> :sp<CR>
-imap <C-g> <C-O>:vsp<CR>
-nmap <C-g> :vsp<CR>
 imap <Tab> <C-t>
 imap <S-Tab> <C-d>
 nmap <Tab> >>
 nmap <S-Tab> <<
-nmap ñ :m-2<CR>
-nmap , :m+1<CR>
+" nmap ñ :m-2<CR>
+" nmap , :m+1<CR>
 
 " themes
 set termguicolors
@@ -164,14 +159,10 @@ colorscheme onedark
 
 " tmux-navigator
 let g:tmux_navigator_no_mappings = 1
-imap <S-left> <C-O>:TmuxNavigateLeft<cr>
-nmap <S-left> :TmuxNavigateLeft<cr>
-imap <S-down> <C-O>:TmuxNavigateDown<cr>
-nmap <S-down> :TmuxNavigateDown<cr>
-imap <S-up>  <C-O>:TmuxNavigateUp<cr>
-nmap <S-up> :TmuxNavigateUp<cr>
-imap <S-right>  <C-O>:TmuxNavigateRight<cr>
-nmap <S-right> :TmuxNavigateRight<cr>
+nmap <space>h :TmuxNavigateLeft<cr>
+nmap <space>j :TmuxNavigateDown<cr>
+nmap <space>k :TmuxNavigateUp<cr>
+nmap <space>l :TmuxNavigateRight<cr>
 
 " coc-python (for python2)
 " coc-pyright (for python3)
