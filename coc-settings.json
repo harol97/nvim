@@ -9,6 +9,7 @@
   "eslint.format.enable": true,
   "pyright.organizeimports.provider": "pyright",
   "java.enabled": false,
+  "typescript.format.enable": false,
   "html.filetypes": [
     "html",
     "handlebars",
@@ -32,4 +33,24 @@
     "ngClass",
     "className.*"
   ],
+  "explorer.focus": true,
+  "explorer.position": "right",
+  "explorer.width": 80,
+  "explorer.icon.enableNerdfont": true,
+  "explorer.quitOnOpen": true,
+  "explorer.file.showHiddenFiles": false,
+  "explorer.file.hiddenRules": {
+    "extensions": [
+      "o",
+      "a",
+      "obj",
+      "pyc"
+    ],
+    "filenames": [
+      "__pycache__"
+    ],
+    "patternMatches": [
+      "^\\."
+    ]
+  }
 }

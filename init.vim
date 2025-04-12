@@ -1,10 +1,5 @@
-unmap <C-W><C-D>
-unmap <C-W>d
-" unmap <C-W><C-D> "just is necessary
-" unmap <C-W>d "just is necessary
-
-
 call plug#begin("~/.local/share/nvim/plugged")
+Plug 'https://github.com/tpope/vim-commentary'
 Plug 'jremmen/vim-ripgrep'
 Plug 'rktjmp/lush.nvim'
 Plug 'christoomey/vim-tmux-navigator'
@@ -12,30 +7,25 @@ Plug 'neoclide/coc.nvim',{'branch': 'release'}
 Plug 'rktjmp/lush.nvim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'briones-gabriel/darcula-solid.nvim'
+Plug 'https://github.com/navarasu/onedark.nvim'
 Plug 'nvim-lua/popup.nvim'
+Plug 'https://github.com/tpope/vim-surround'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-media-files.nvim'
-Plug 'https://github.com/ellisonleao/gruvbox.nvim'
+Plug 'https://github.com/fneu/breezy'
+Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'rbong/vim-flog'
 Plug 'tpope/vim-fugitive'
-Plug 'rbong/vim-flog'
-Plug 'cdmedia/itg_flat_vim'
 Plug 'josuegaleas/jay'
-Plug 'https://github.com/xiantang/darcula-dark.nvim'
-Plug 'https://github.com/parkerault/onivim-theme-hybrid'
-Plug 'https://github.com/navarasu/onedark.nvim'
 Plug 'davidgranstrom/nvim-markdown-preview'
 Plug 'kaicataldo/material.vim', { 'branch': 'main' }
-" Vim-Plug
-"Plug 'olimorris/onedarkpro.nvim'
+Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.4' }
 Plug 'udalov/kotlin-vim'
-Plug 'nvim-tree/nvim-web-devicons'
-Plug 'nvim-tree/nvim-tree.lua'
+Plug 'https://github.com/airblade/vim-gitgutter'
 
 call plug#end()
 
@@ -48,6 +38,10 @@ syntax on
 
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
                               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+"git diff vin-githutter"
+set updatetime=100
+
 "teleescope
 " Find files using Telescope command-line sugar.
 nnoremap ff <cmd>Telescope find_files<cr>
@@ -56,13 +50,6 @@ nnoremap fb <cmd>Telescope buffers<cr>
 nnoremap fh <cmd>Telescope help_tags<cr>
 "telescop
 
-
-
-" terminal
-
-nmap <C-j> <Plug>(coc-terminal-toggle)<CR>
-imap <C-j> <Plug>(coc-terminal-toggle)<CR>
-
 " multicursor
 nmap <C-c> <Cmd>\\\<CR>
 
@@ -70,7 +57,6 @@ nmap <silent> <C-c> <Plug>(coc-cursors-position)
 "nmap <silent> <C-d> <Plug>(coc-cursors-word)
 "xmap <silent> <C-d> <Plug>(coc-cursors-range)
 nmap <leader>x  <Plug>(coc-cursors-operator)
-
 
 
 "reload nvim
@@ -88,33 +74,28 @@ nmap <silent> gd <Plug>(coc-definition)
 
 
 " explorer
-nmap <space>b <Cmd>NvimTreeToggle<CR>
-imap <c-b> <C-O>:NvimTreeToggle<Enter><C-O>
+nmap <space>b <Cmd>CocCommand explorer<CR>
+imap <c-b> <C-O>:CocCommand explorer<Enter><C-O>
 
-" airline
-let g:airline_theme='wombat'
+nmap <space>a ggVG<CR>
+
 
 " docstring
 nmap <silent> ga <Plug>(coc-codeaction-line)
 xmap <silent> ga <Plug>(coc-codeaction-selected)
 nmap <silent> gA <Plug>(coc-codeaction)
 
-
-" solo cuando veo que no siguen el estandar
-" let g:python_recommended_style=0
-
 " config nvim
 filetype plugin indent on
 set number
 set showcmd
-set mouse=a
+set relativenumber
 set clipboard=unnamedplus
 set encoding=UTF-8
-imap <Home> <C-O>^
-nmap <Home> ^
 set sw=2
 set expandtab
 set nowrap
+autocmd FileType python setlocal sw=4 expandtab
 autocmd FileType javascript setlocal sw=2 expandtab
 autocmd FileType java setlocal sw=8 noexpandtab 
 autocmd FileType xml setlocal sw=8 noexpandtab 
@@ -133,29 +114,24 @@ autocmd FileType css setlocal sw=2 expandtab
 xnoremap <expr> p 'pgv"'.v:register.'y`>'
 xnoremap <expr> P 'Pgv"'.v:register.'y`>'
 
-imap <C-s> <C-O>:w<CR>
-nmap <C-s> :w<CR>
-imap <C-r> <C-O>:u<CR>
-imap <C-w> <C-O>:q<CR>
-nmap <C-w> :q<CR>
-imap <C-x> <C-O>:qa<CR>
-nmap <C-x> :qa<CR>
 imap <Tab> <C-t>
 imap <S-Tab> <C-d>
 nmap <Tab> >>
 nmap <S-Tab> <<
-" nmap ñ :m-2<CR>
-" nmap , :m+1<CR>
+nmap ñ }
 
 " themes
 set termguicolors
 set background=dark
-"colorscheme gruvbox
-
 let g:onedark_config = {
   \ 'style': 'darker',
 \ }
-colorscheme onedark
+
+colorscheme  onedark
+
+" airline
+" let g:airline_theme='wombat'
+let g:airline_theme='zenburn'
 
 " tmux-navigator
 let g:tmux_navigator_no_mappings = 1
@@ -163,6 +139,18 @@ nmap <space>h :TmuxNavigateLeft<cr>
 nmap <space>j :TmuxNavigateDown<cr>
 nmap <space>k :TmuxNavigateUp<cr>
 nmap <space>l :TmuxNavigateRight<cr>
+
+" colors to compatible with breezy theme in nvim
+hi CocErrorFloat guifg=#ffffff    " Error en rojo
+hi CocWarningFloat guifg=#ffffff  " Advertencia en amarillo
+hi CocInfoFloat guifg=#ffffff     " Información en azul
+hi CocHintFloat guifg=#ffffff     " Sugerencias en verde
+hi Delimiter guifg=#ffffff
+" hi MatchParen ctermfg=white ctermbg=blue guifg=#ffffff guibg=#0000ff
+" Puedes agregar colores específicos para corchetes y llaves
+
+hi NormalFloat   guibg=#313538 guifg=#e8e9eb  gui=NONE
+
 
 " coc-python (for python2)
 " coc-pyright (for python3)
