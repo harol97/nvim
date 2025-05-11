@@ -97,7 +97,7 @@ set nowrap
 autocmd FileType python setlocal sw=4 expandtab
 autocmd FileType javascript setlocal sw=2 expandtab
 autocmd FileType java setlocal sw=8 noexpandtab 
-autocmd FileType xml setlocal sw=8 noexpandtab 
+autocmd FileType xml setlocal sw=4 expandtab 
 autocmd FileType javascriptreact setlocal sw=2 expandtab
 autocmd FileType typescript setlocal sw=2 expandtab
 autocmd FileType typescriptreact setlocal sw=2 expandtab
@@ -124,6 +124,7 @@ set termguicolors
 set background=dark
 let g:onedark_config = {
   \ 'style': 'darker',
+  \ 'colors':{"bg0":"#16191d"}
 \ }
 
 colorscheme  onedark
