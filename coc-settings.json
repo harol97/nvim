@@ -25,7 +25,6 @@
     "json"
   ],
   "inlayHint.enable": false,
-  "eslint.enable": false,
   "tailwindCSS.enable": false,
   "tailwindCSS.classAttributes": [
     "class",
